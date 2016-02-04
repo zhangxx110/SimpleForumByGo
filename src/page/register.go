@@ -5,7 +5,6 @@ import (
 	"html/template"
 	"net/http"
 	"time"
-	"utils"
 	"utils/dbutil"
 )
 
@@ -20,17 +19,17 @@ func Register(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("method:", r.Method) //获取请求的方法
 	if r.Method == "GET" {
 		cookie, err := r.Cookie("login")
-		if err ==nil && len(cookie.Value)>0{
+		var t *template.Template
+		if err == nil && len(cookie.Value) > 0 {
 			fmt.Println(tag_lg, "cookie:"+cookie.Value)
-			t, err := template.ParseFiles("template" + "/forum.html")
-		}else{
-			t, err := template.ParseFiles("template" + "/register.htm")
+			t, err = template.ParseFiles("template" + "/forum.html")
+		} else {
+			t, err = template.ParseFiles("template" + "/register.htm")
 		}
 		if err != nil {
 			fmt.Println(tag_lg, err)
 			return
 		}
-		
 		t.Execute(w, nil)
 	} else if r.Method == "POST" {
 		//请求的是登陆数据，那么执行登陆的逻辑判断
@@ -57,7 +56,7 @@ func addUser(w http.ResponseWriter, r *http.Request, name string, password strin
 	} else {
 		expiration := time.Now()
 		expiration = expiration.Add(10 * time.Minute)
-//		stamp := utils.EncMd5(name + password)
+		//		stamp := utils.EncMd5(name + password)
 		cookie := http.Cookie{
 			Name:    "login",
 			Value:   name,
