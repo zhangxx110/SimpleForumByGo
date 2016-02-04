@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<title>C语言也能干大事 -  如鹏网 -  Powered by Discuz!</title>
+<meta name="keywords" content="C语言也能干大事" />
+<meta name="description" content="C语言也能干大事 ,如鹏网" />
+<meta name="generator" content="Discuz! X3.1" />
+<meta name="author" content="Discuz! Team and Comsenz UI Team" />
+<meta name="copyright" content="2001-2013 Comsenz Inc." />
+<meta name="MSSmartTagsPreventParsing" content="True" />
+<meta http-equiv="MSThemeCompatible" content="Yes" />
+<base href="http://www.rupeng.com/forum/" />
+<link rel="stylesheet" type="text/css" href="data/cache/style_1_common.css?tcD" />
+<link rel="stylesheet" type="text/css" href="data/cache/style_1_forum_forumdisplay.css?tcD" />
+<script type="text/javascript">var STYLEID = '1', STATICURL = 'static/', IMGDIR = 'static/image/common', VERHASH = 'tcD', charset = 'gbk', discuz_uid = '0', cookiepre = 'ABEo_2132_', cookiedomain = '', cookiepath = '/', showusercard = '1', attackevasive = '0', disallowfloat = 'login|sendpm|newthread|reply|viewratings|viewwarning|viewthreadmod|viewvote|tradeorder|activity|debate|nav|usergroups|task', creditnotice = '1|鹏币|', defaultstyle = '', REPORTURL = 'aHR0cDovL3d3dy5ydXBlbmcuY29tL2ZvcnVtL2ZvcnVtLTI5LTEuaHRtbA==', SITEURL = 'http://www.rupeng.com/forum/', JSPATH = 'data/cache/', DYNAMICURL = '';</script>
+<script src="data/cache/common.js?tcD" type="text/javascript"></script>
+<meta name="application-name" content="如鹏网" />
+<meta name="msapplication-tooltip" content="如鹏网" />
+<meta name="msapplication-task" content="name=网站首页;action-uri=http://www.rupeng.com/forum/portal.php;icon-uri=http://www.rupeng.com/forum/static/image/common/portal.ico" />
+<meta name="msapplication-task" content="name=论坛;action-uri=http://www.rupeng.com/forum/forum.php;icon-uri=http://www.rupeng.com/forum/static/image/common/bbs.ico" />
+<link rel="archives" title="如鹏网" href="http://www.rupeng.com/forum/archiver/" />
+<link rel="alternate" type="application/rss+xml" title="如鹏网 - 如鹏网 计算机专业|大学生|就业|编程|软件开发|C语言" href="http://www.rupeng.com/forum/forum.php?mod=rss&fid=29&amp;auth=0" />
+<script src="data/cache/forum.js?tcD" type="text/javascript"></script>
+</head>
+
+<body id="nv_forum" class="pg_forumdisplay" onkeydown="if(event.keyCode==27) return false;">
+<div id="append_parent"></div>
+<div id="ajaxwaitid"></div>
+<div id="toptb" class="cl">
+  <div class="wp">
+    <div class="z"><a href="javascript:;"  onclick="setHomepage('http://www.rupeng.com/forum/');">设为首页</a><a href="http://www.rupeng.com/forum/"  onclick="addFavorite(this.href, '如鹏网');return false;">收藏本站</a><script type="text/javascript">var _speedMark = new Date();</script></div>
+    <div class="y"> <a id="switchblind" href="javascript:;" onclick="toggleBlind(this)" title="开启辅助访问" class="switchblind">开启辅助访问</a> <a href="javascript:;" id="switchwidth" onclick="widthauto(this)" title="切换到宽版" class="switchwidth">切换到宽版</a> </div>
+  </div>
+</div>
+<div id="qmenu_menu" class="p_pop blk" style="display: none;">
+  <div class="ptm pbw hm"> 请 <a href="javascript:;" class="xi2" onclick="lsSubmit()"><strong>登录</strong></a> 后使用快捷导航<br />
+    没有帐号？<a href="member.php?mod=register" class="xi2 xw1">注 册</a> </div>
+  <div id="fjump_menu" class="btda"></div>
+</div>
+<div id="hd">
+  <div class="wp">
+    <div class="hdc cl">
+      <h2><a href="./" title="如鹏网"><img src="static/image/common/logo.png" alt="如鹏网" border="0" /></a></h2>
+      <script src="data/cache/logging.js?tcD" type="text/javascript"></script>
+      <form method="post" autocomplete="off" id="lsform" action="member.php?mod=logging&amp;action=login&amp;loginsubmit=yes&amp;infloat=yes&amp;lssubmit=yes" onsubmit="return lsSubmit();">
+        <div class="fastlg cl"> <span id="return_ls" style="display:none"></span>
+          <div class="y pns">
+            <table cellspacing="0" cellpadding="0">
+              <tr>
+                <td><span class="ftid">
+                  <select name="fastloginfield" id="ls_fastloginfield" width="40" tabindex="900">
+                    <option value="username">用户名</option>
+                    <option value="email">Email</option>
+                  </select>
+                  </span> 
+                  <script type="text/javascript">simulateSelect('ls_fastloginfield')</script></td>
+                <td><input type="text" name="username" id="ls_username" autocomplete="off" class="px vm" tabindex="901" /></td>
+                <td class="fastlg_l"><label for="ls_cookietime">
+                    <input type="checkbox" name="cookietime" id="ls_cookietime" class="pc" value="2592000" tabindex="903" />
+                    自动登录</label></td>
+                <td>&nbsp;<a href="javascript:;" onclick="showWindow('login', 'member.php?mod=logging&action=login&viewlostpw=1')">找回密码</a></td>
+              </tr>
+              <tr>
+                <td><label for="ls_password" class="z psw_w">密码</label></td>
+                <td><input type="password" name="password" id="ls_password" class="px vm" autocomplete="off" tabindex="902" /></td>
+                <td class="fastlg_l"><button type="submit" class="pn vm" tabindex="904" style="width: 75px;"><em>登录</em></button></td>
+                <td>&nbsp;<a href="member.php?mod=register" class="xi2 xw1">注 册</a></td>
+              </tr>
+            </table>
+            <input type="hidden" name="quickforward" value="yes" />
+            <input type="hidden" name="handlekey" value="ls" />
+          </div>
+          <div class="fastlg_fm y" style="margin-right: 10px; padding-right: 10px">
+            <p><a href="http://www.rupeng.com/forum/connect.php?mod=login&op=init&referer=forum.php%3Fmod%3Dforumdisplay%26fid%3D29%26page%3D1%26&statfrom=login_simple"><img src="static/image/common/qq_login.gif" class="vm" alt="QQ登录" /></a></p>
+            <p class="hm xg1" style="padding-top: 2px;">只需一步，快速开始</p>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div id="nv"> <a href="javascript:;" id="qmenu" onmouseover="delayShow(this, function () {showMenu({'ctrlid':'qmenu','pos':'34!','ctrlclass':'a','duration':2});showForummenu(29);})">快捷导航</a>
+      <ul>
+        <li id="mn_portal" ><a href="portal.php" hidefocus="true" title="Portal"  >网站首页<span>Portal</span></a></li>
+        <li class="a" id="mn_forum" ><a href="forum.php" hidefocus="true" title="BBS"  >论坛<span>BBS</span></a></li>
+        <li id="mn_N2764" ><a href="forum.php?mod=misc&action=nav" hidefocus="true"   style="font-weight: bold;color: yellow">发表新帖</a></li>
+      </ul>
+    </div>
+    <div class="p_pop h_pop" id="mn_userapp_menu" style="display: none"></div>
+    <div id="mu" class="cl"> </div>
+    <div id="scbar" class="scbar_narrow cl">
+      <form id="scbar_form" method="get" autocomplete="off" onsubmit="searchFocus($('scbar_txt'))" action="http://search.discuz.qq.com/f/discuz" target="_blank">
+        <input type="hidden" name="mod" id="scbar_mod" value="search" />
+        <input type="hidden" name="formhash" value="4a212d6a" />
+        <input type="hidden" name="srchtype" value="title" />
+        <input type="hidden" name="srhfid" value="29" />
+        <input type="hidden" name="srhlocality" value="forum::forumdisplay" />
+        <input type="hidden" name="sId" value="9379066" />
+        <input type="hidden" name="ts" value="1389868107" />
+        <input type="hidden" name="cuId" value="0" />
+        <input type="hidden" name="cuName" value="" />
+        <input type="hidden" name="gId" value="7" />
+        <input type="hidden" name="agId" value="0" />
+        <input type="hidden" name="egIds" value="" />
+        <input type="hidden" name="fmSign" value="" />
+        <input type="hidden" name="ugSign7" value="" />
+        <input type="hidden" name="sign" value="4e0bdc9f3411196bdc435d83d98fdd2f" />
+        <input type="hidden" name="charset" value="gbk" />
+        <input type="hidden" name="source" value="discuz" />
+        <input type="hidden" name="fId" id="srchFId" value="29" />
+        <input type="hidden" name="q" id="cloudsearchquery" value="" />
+        <style>
+#scbar { overflow: visible; position: relative; }
+#sg{ background: #FFF; width:456px; border: 1px solid #B2C7DA; }
+.scbar_narrow #sg { width: 316px; }
+#sg li { padding:0 8px; line-height:30px; font-size:14px; }
+#sg li span { color:#999; }
+.sml { background:#FFF; cursor:default; }
+.smo { background:#E5EDF2; cursor:default; }
+            </style>
+        <div style="display: none; position: absolute; top:37px; left:44px;" id="sg">
+          <div id="st_box" cellpadding="2" cellspacing="0"></div>
+        </div>
+        <table cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="scbar_icon_td"></td>
+            <td class="scbar_txt_td"><input type="text" name="srchtxt" id="scbar_txt" value="请输入搜索内容" autocomplete="off" x-webkit-speech speech /></td>
+            <td class="scbar_type_td"><a href="javascript:;" id="scbar_type" class="xg1" onclick="showMenu(this.id)" hidefocus="true">搜索</a></td>
+            <td class="scbar_btn_td"><button type="submit" name="searchsubmit" id="scbar_btn" sc="1" class="pn pnc" value="true"><strong class="xi2">搜索</strong></button></td>
+            <td class="scbar_hot_td"><div id="scbar_hot"> <strong class="xw1">热搜: </strong> <a href="http://search.discuz.qq.com/f/discuz?q=oracle&source=hotsearch&sId=9379066&ts=1389868107&cuId=0&cuName=&gId=7&agId=0&egIds=&fmSign=&ugSign7=&sign=4e0bdc9f3411196bdc435d83d98fdd2f&charset=gbk" target="_blank" class="xi2" sc="1">oracle</a> <a href="http://search.discuz.qq.com/f/discuz?q=c&source=hotsearch&sId=9379066&ts=1389868107&cuId=0&cuName=&gId=7&agId=0&egIds=&fmSign=&ugSign7=&sign=4e0bdc9f3411196bdc435d83d98fdd2f&charset=gbk" target="_blank" class="xi2" sc="1">c</a> <a href="http://search.discuz.qq.com/f/discuz?q=%BC%C6%CB%E3%C6%F7&source=hotsearch&sId=9379066&ts=1389868107&cuId=0&cuName=&gId=7&agId=0&egIds=&fmSign=&ugSign7=&sign=4e0bdc9f3411196bdc435d83d98fdd2f&charset=gbk" target="_blank" class="xi2" sc="1">计算器</a> <a href="http://search.discuz.qq.com/f/discuz?q=%C1%C4%CC%EC&source=hotsearch&sId=9379066&ts=1389868107&cuId=0&cuName=&gId=7&agId=0&egIds=&fmSign=&ugSign7=&sign=4e0bdc9f3411196bdc435d83d98fdd2f&charset=gbk" target="_blank" class="xi2" sc="1">聊天</a> <a href="http://search.discuz.qq.com/f/discuz?q=%BC%F2%C0%FA&source=hotsearch&sId=9379066&ts=1389868107&cuId=0&cuName=&gId=7&agId=0&egIds=&fmSign=&ugSign7=&sign=4e0bdc9f3411196bdc435d83d98fdd2f&charset=gbk" target="_blank" class="xi2" sc="1">简历</a> <a href="http://search.discuz.qq.com/f/discuz?q=ListView%CD%BC%B1%EA&source=hotsearch&sId=9379066&ts=1389868107&cuId=0&cuName=&gId=7&agId=0&egIds=&fmSign=&ugSign7=&sign=4e0bdc9f3411196bdc435d83d98fdd2f&charset=gbk" target="_blank" class="xi2" sc="1">ListView图标</a> <a href="http://search.discuz.qq.com/f/discuz?q=c%2B%2B&source=hotsearch&sId=9379066&ts=1389868107&cuId=0&cuName=&gId=7&agId=0&egIds=&fmSign=&ugSign7=&sign=4e0bdc9f3411196bdc435d83d98fdd2f&charset=gbk" target="_blank" class="xi2" sc="1">c++</a> <a href="http://search.discuz.qq.com/f/discuz?q=java&source=hotsearch&sId=9379066&ts=1389868107&cuId=0&cuName=&gId=7&agId=0&egIds=&fmSign=&ugSign7=&sign=4e0bdc9f3411196bdc435d83d98fdd2f&charset=gbk" target="_blank" class="xi2" sc="1">java</a> <a href="http://search.discuz.qq.com/f/discuz?q=web&source=hotsearch&sId=9379066&ts=1389868107&cuId=0&cuName=&gId=7&agId=0&egIds=&fmSign=&ugSign7=&sign=4e0bdc9f3411196bdc435d83d98fdd2f&charset=gbk" target="_blank" class="xi2" sc="1">web</a> <a href="http://search.discuz.qq.com/f/discuz?q=c%D3%EF%D1%D4&source=hotsearch&sId=9379066&ts=1389868107&cuId=0&cuName=&gId=7&agId=0&egIds=&fmSign=&ugSign7=&sign=4e0bdc9f3411196bdc435d83d98fdd2f&charset=gbk" target="_blank" class="xi2" sc="1">c语言</a> <a href="http://search.discuz.qq.com/f/discuz?q=%B5%A5%C6%AC%BB%FA&source=hotsearch&sId=9379066&ts=1389868107&cuId=0&cuName=&gId=7&agId=0&egIds=&fmSign=&ugSign7=&sign=4e0bdc9f3411196bdc435d83d98fdd2f&charset=gbk" target="_blank" class="xi2" sc="1">单片机</a> <a href="http://search.discuz.qq.com/f/discuz?q=%D1%A7%C9%FA%B9%DC%C0%ED%CF%B5%CD%B3&source=hotsearch&sId=9379066&ts=1389868107&cuId=0&cuName=&gId=7&agId=0&egIds=&fmSign=&ugSign7=&sign=4e0bdc9f3411196bdc435d83d98fdd2f&charset=gbk" target="_blank" class="xi2" sc="1">学生管理系统</a> <a href="http://search.discuz.qq.com/f/discuz?q=%D3%A2%D3%EF&source=hotsearch&sId=9379066&ts=1389868107&cuId=0&cuName=&gId=7&agId=0&egIds=&fmSign=&ugSign7=&sign=4e0bdc9f3411196bdc435d83d98fdd2f&charset=gbk" target="_blank" class="xi2" sc="1">英语</a> <a href="http://search.discuz.qq.com/f/discuz?q=%B2%E5%BC%FE&source=hotsearch&sId=9379066&ts=1389868107&cuId=0&cuName=&gId=7&agId=0&egIds=&fmSign=&ugSign7=&sign=4e0bdc9f3411196bdc435d83d98fdd2f&charset=gbk" target="_blank" class="xi2" sc="1">插件</a> <a href="http://search.discuz.qq.com/f/discuz?q=%C4%DA%BA%CB&source=hotsearch&sId=9379066&ts=1389868107&cuId=0&cuName=&gId=7&agId=0&egIds=&fmSign=&ugSign7=&sign=4e0bdc9f3411196bdc435d83d98fdd2f&charset=gbk" target="_blank" class="xi2" sc="1">内核</a> <a href="http://search.discuz.qq.com/f/discuz?q=%CA%E9&source=hotsearch&sId=9379066&ts=1389868107&cuId=0&cuName=&gId=7&agId=0&egIds=&fmSign=&ugSign7=&sign=4e0bdc9f3411196bdc435d83d98fdd2f&charset=gbk" target="_blank" class="xi2" sc="1">书</a> <a href="http://search.discuz.qq.com/f/discuz?q=c%D3%EF%D1%D4%BD%CC%B3%CC&source=hotsearch&sId=9379066&ts=1389868107&cuId=0&cuName=&gId=7&agId=0&egIds=&fmSign=&ugSign7=&sign=4e0bdc9f3411196bdc435d83d98fdd2f&charset=gbk" target="_blank" class="xi2" sc="1">c语言教程</a> <a href="http://search.discuz.qq.com/f/discuz?q=%CA%D3%C6%B5&source=hotsearch&sId=9379066&ts=1389868107&cuId=0&cuName=&gId=7&agId=0&egIds=&fmSign=&ugSign7=&sign=4e0bdc9f3411196bdc435d83d98fdd2f&charset=gbk" target="_blank" class="xi2" sc="1">视频</a> <a href="http://search.discuz.qq.com/f/discuz?q=%CF%C2%D4%D8&source=hotsearch&sId=9379066&ts=1389868107&cuId=0&cuName=&gId=7&agId=0&egIds=&fmSign=&ugSign7=&sign=4e0bdc9f3411196bdc435d83d98fdd2f&charset=gbk" target="_blank" class="xi2" sc="1">下载</a> <a href="http://search.discuz.qq.com/f/discuz?q=%D7%EE%BD%FC&source=hotsearch&sId=9379066&ts=1389868107&cuId=0&cuName=&gId=7&agId=0&egIds=&fmSign=&ugSign7=&sign=4e0bdc9f3411196bdc435d83d98fdd2f&charset=gbk" target="_blank" class="xi2" sc="1">最近</a> <a href="http://search.discuz.qq.com/f/discuz?q=%CA%FD%BE%DD%BD%E1%B9%B9&source=hotsearch&sId=9379066&ts=1389868107&cuId=0&cuName=&gId=7&agId=0&egIds=&fmSign=&ugSign7=&sign=4e0bdc9f3411196bdc435d83d98fdd2f&charset=gbk" target="_blank" class="xi2" sc="1">数据结构</a> <a href="http://search.discuz.qq.com/f/discuz?q=vc6.0&source=hotsearch&sId=9379066&ts=1389868107&cuId=0&cuName=&gId=7&agId=0&egIds=&fmSign=&ugSign7=&sign=4e0bdc9f3411196bdc435d83d98fdd2f&charset=gbk" target="_blank" class="xi2" sc="1">vc6.0</a> </div></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+    <ul id="scbar_type_menu" class="p_pop" style="display: none;">
+      <li><a href="javascript:;" rel="curforum" fid="29" >本版</a></li>
+      <li><a href="javascript:;" rel="forum" class="curtype">帖子</a></li>
+      <li><a href="javascript:;" rel="user">用户</a></li>
+    </ul>
+    <script type="text/javascript">
+initSearchmenu('scbar', 'http://search.discuz.qq.com/f/discuz');
+</script> 
+  </div>
+</div>
+<div id="wp" class="wp">
+  <style id="diy_style" type="text/css">
+</style>
+  <!--[diy=diynavtop]-->
+  <div id="diynavtop" class="area"></div>
+  <!--[/diy]-->
+  <div id="pt" class="bm cl">
+    <div class="z"> <a href="./" class="nvhm" title="首页">如鹏网</a><em>&raquo;</em><a href="forum.php">论坛</a> <em>&rsaquo;</em> <a href="forum.php?gid=20">如鹏原创课程</a><em>&rsaquo;</em> <a href="forum-29-1.html">C语言也能干大事</a></div>
+  </div>
+  <div class="wp"> 
+    <!--[diy=diy1]-->
+    <div id="diy1" class="area"></div>
+    <!--[/diy]--> 
+  </div>
+  <div class="boardnav">
+    <div id="ct" class="wp cl">
+      <div class="mn">
+        <div class="bm bml pbn">
+          <div class="bm_h cl"> <span class="y"> <a href="home.php?mod=spacecp&amp;ac=favorite&amp;type=forum&amp;id=29&amp;handlekey=favoriteforum&amp;formhash=4a212d6a" id="a_favorite" class="fa_fav" onclick="showWindow(this.id, this.href, 'get', 0);">收藏本版 <strong class="xi1" id="number_favorite" >(<span id="number_favorite_num">10</span>)</strong></a> </span>
+            <h1 class="xs2"> <a href="forum-29-1.html">C语言也能干大事</a> </h1>
+          </div>
+          <div class="bm_c cl pbn">
+            <div>版主: <span class="xi2"><a href="space-username-CALF.html" class="notabs" c="1">CALF</a>, <a href="space-username-syx278250658.html" class="notabs" c="1">syx278250658</a>, <a href="space-username-rtgirl.html" class="notabs" c="1">rtgirl</a></span></div>
+          </div>
+        </div>
+        <div class="bm bmw fl">
+          <div class="bm_h cl"> <span class="o"><img id="subforum_29_img" src="static/image/common/collapsed_no.gif" title="收起/展开" alt="收起/展开" onclick="toggle_collapse('subforum_29');" /></span>
+            <h2>子版块</h2>
+          </div>
+          <div id="subforum_29" class="bm_c" style="">
+            <table cellspacing="0" cellpadding="0" class="fl_tb">
+              <tr>
+                <td class="fl_icn" ><a href="forum-52-1.html"><img src="static/image/common/forum.gif" alt="第二版视频教程（课程升级）" /></a></td>
+                <td><h2><a href="forum-52-1.html"  style="">第二版视频教程（课程升级）</a></h2></td>
+                <td class="fl_i"><span class="xi2">62</span><span class="xg1"> / 4476</span></td>
+                <td class="fl_by"><div> <a href="forum.php?mod=redirect&amp;tid=8800&amp;goto=lastpost#lastpost" class="xi2">《C语言也能干大事》第四节</a> <cite><span title="2014-1-14 21:58">前天&nbsp;21:58</span> <a href="space-username-woshituzhi.html">woshituzhi</a></cite> </div></td>
+              </tr>
+              <tr class="fl_row">
+                <td class="fl_icn" ><a href="forum-32-1.html"><img src="static/image/common/forum.gif" alt="提问与辅导" /></a></td>
+                <td><h2><a href="forum-32-1.html"  style="">提问与辅导</a></h2></td>
+                <td class="fl_i"><span class="xi2">5976</span><span class="xg1"> / <span title="34659">3万</span></span></td>
+                <td class="fl_by"><div> <a href="forum.php?mod=redirect&amp;tid=40217&amp;goto=lastpost#lastpost" class="xi2">音乐播放器 熬一个通宵搞出来了  ...</a> <cite><span title="2014-1-15 11:09">昨天&nbsp;11:09</span> <a href="space-username-nifengweijifen.html">nifengweijifen</a></cite> </div></td>
+              </tr>
+              <tr class="fl_row">
+                <td class="fl_icn" ><a href="forum-33-1.html"><img src="static/image/common/forum.gif" alt="第一版视频教程" /></a></td>
+                <td><h2><a href="forum-33-1.html"  style="">第一版视频教程</a></h2></td>
+                <td class="fl_i"><span class="xi2">16</span><span class="xg1"> / 718</span></td>
+                <td class="fl_by"><div> <a href="forum.php?mod=redirect&amp;tid=226&amp;goto=lastpost#lastpost" class="xi2">【教学视频】《C语言也能干大事 ...</a> <cite><span title="2014-1-14 21:08">前天&nbsp;21:08</span> <a href="space-username-C%2FC%2B%2B.html">C/C++</a></cite> </div></td>
+              </tr>
+              <tr class="fl_row"> </tr>
+            </table>
+          </div>
+        </div>
+        <div class="drag"> 
+          <!--[diy=diy4]-->
+          <div id="diy4" class="area"></div>
+          <!--[/diy]--> 
+        </div>
+        
+        <!--[diy=diyfastposttop]-->
+        <div id="diyfastposttop" class="area"></div>
+        <!--[/diy]--> 
+        
+        <!--[diy=diyforumdisplaybottom]-->
+        <div id="diyforumdisplaybottom" class="area"></div>
+        <!--[/diy]--> 
+      </div>
+    </div>
+  </div>
+  <div id="visitedforums_menu" class="p_pop blk cl" style="display: none;">
+    <table cellspacing="0" cellpadding="0">
+      <tr>
+        <td id="v_forums"><h3 class="mbn pbn bbda xg1">浏览过的版块</h3>
+          <ul class="xl xl1">
+            10
+          </ul></td>
+      </tr>
+    </table>
+  </div>
+  <div class="wp mtn"> 
+    <!--[diy=diy3]-->
+    <div id="diy3" class="area"></div>
+    <!--[/diy]--> 
+  </div>
+  <script>fixed_top_nv();</script> </div>
+<script type="text/javascript">var cookieLogin = Ajax("TEXT");cookieLogin.get("connect.php?mod=check&op=cookie", function() {});</script> 
+<script type="text/javascript">
+_attachEvent(window, 'load', getForbiddenFormula, document);
+function getForbiddenFormula() {
+var toGetForbiddenFormulaFIds = function () {
+ajaxget('plugin.php?id=cloudsearch&formhash=4a212d6a');
+};
+var a = document.body.getElementsByTagName('a');
+for(var i = 0;i < a.length;i++){
+if(a[i].getAttribute('sc')) {
+a[i].setAttribute('mid', hash(a[i].href));
+a[i].onmousedown = function() {toGetForbiddenFormulaFIds();};
+}
+}
+var btn = document.body.getElementsByTagName('button');
+for(var i = 0;i < btn.length;i++){
+if(btn[i].getAttribute('sc')) {
+btn[i].setAttribute('mid', hash(btn[i].id));
+btn[i].onmousedown = function() {toGetForbiddenFormulaFIds();};
+}
+}
+}
+</script>
+<div id="ft" class="wp cl">
+  <div id="flk" class="y">
+    <p> <a href="forum.php?mod=misc&action=showdarkroom" >小黑屋</a><span class="pipe">|</span><a href="forum.php?mobile=yes" >手机版</a><span class="pipe">|</span><a href="archiver/" >Archiver</a><span class="pipe">|</span><strong><a href="http://www.RuPeng.com" target="_blank">如鹏网</a></strong> ( <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备09013919号</a> )&nbsp;<a href="http://discuz.qq.com/service/security" target="_blank" title="防水墙保卫网站远离侵害"><img src="static/image/common/security.png"></a>&nbsp;&nbsp;<span id="tcss"></span><script type="text/javascript" src="http://tcss.qq.com/ping.js?v=1tcD" charset="utf-8"></script><script type="text/javascript" reload="1">pgvMain({"discuzParams":{"r2":"9379066","ui":0,"rt":"forum","md":"forumdisplay","fi":"29","pn":1,"qq":"000","logo":11},"extraParams":""});</script><script src="http://s140.cnzz.com/stat.php?id=1045968&web_id=1045968&show=pic" language="JavaScript" charset="gb2312"></script> 
+      
+      <!-- Baidu Button BEGIN --> 
+      <script type="text/javascript" id="bdshare_js" data="type=slide&img=0&pos=left" ></script> 
+      <script type="text/javascript" id="bdshell_js"></script> 
+      <script type="text/javascript">
+		var bds_config = {"bdTop":0};
+		document.getElementById("bdshell_js").src = "http://share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+</script> 
+      <!-- Baidu Button END --></p>
+    <p class="xs0"> GMT+8, 2014-1-16 18:28<span id="debuginfo"> </span> </p>
+  </div>
+  <div id="frt">
+    <p>Powered by <strong><a href="http://www.discuz.net" target="_blank">Discuz!</a></strong> <em>X3.1</em></p>
+    <p class="xs0">&copy; 2001-2013 <a href="http://www.comsenz.com" target="_blank">Comsenz Inc.</a></p>
+  </div>
+</div>
+<script src="home.php?mod=misc&ac=sendmail&rand=1389868107" type="text/javascript"></script>
+<div id="scrolltop"> <span hidefocus="true"><a title="返回顶部" onclick="window.scrollTo('0','0')" class="scrolltopa" ><b>返回顶部</b></a></span> <span> <a href="forum.php" hidefocus="true" class="returnboard" title="返回版块"><b>返回版块</b></a> </span> </div>
+<script type="text/javascript">_attachEvent(window, 'scroll', function () { showTopLink(); });checkBlind();</script>
+<div id="discuz_tips" style="display:none;"></div>
+<script type="text/javascript">
+				var tipsinfo = '9379066|X3.1|0.6||0||0|7|1389868107|eaf3d238bc40ff81e0c1aa4256763778|2';
+			</script> 
+<script src="http://discuz.gtimg.cn/cloud/scripts/discuz_tips.js?v=1" type="text/javascript" charset="UTF-8"></script>
+</body>
+</html>

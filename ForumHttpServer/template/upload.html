@@ -1,0 +1,17 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="./js/login.js"></script>
+<title>
+上传文件
+</title>
+</head>
+<body>
+<!-- 上传文件 -->
+<form enctype="multipart/form-data" action="upload" method="post">
+  <input type="file" name="uploadfile" />
+  <input type="hidden" name="token" value="{{.}}"/>
+  <input type="submit" value="upload" />
+</form>
+</body>
+</html>

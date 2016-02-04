@@ -1,0 +1,20 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- <script type="text/javascript" src="./js/login.js"></script> -->
+<title>
+用户登录
+</title>
+</head>
+<body>
+<p>用户名:<input type="text" name="username" id="usernametxt"></p>
+密码:<input type="password" name="password" id="passwtxt">
+<p><input type="submit" id="btn1" value="登陆"></p>
+<input type="hidden" name="token" value="{{.}}" id="tokenId">
+
+<p><input id="txt1" type="text" /></p>
+
+<p>消息:<input type="text" name="socketMsg" id="socket_txt"></p>
+<p><input type="submit" id="socket_btn" value="发送WebSocket消息"> 
+</body>
+</html>
