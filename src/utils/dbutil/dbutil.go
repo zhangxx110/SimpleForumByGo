@@ -3,7 +3,7 @@ package dbutil
 import (
 	"database/sql"
 	"database/sql/driver"
-	"log"
+	"utils/logger"
 	_ "utils/github.com/go-sql-driver/mysql"
 )
 
@@ -23,12 +23,12 @@ func Init(driverName string, dataSourceName string) error {
 	var err error
 	db, err = sql.Open(driverName, dataSourceName)
 	if err != nil {
-		log.Println(tag_DBUtil, err)
+		logger.Println(tag_DBUtil, err)
 		return err
 	}
 	err = db.Ping()
 	if err != nil {
-		log.Println(tag_DBUtil, err)
+		logger.Println(tag_DBUtil, err)
 		return err
 	}
 	return nil
@@ -53,12 +53,12 @@ func Relase() {
 **/
 func Insert(tableName string, property []string, values []interface{}) bool {
 	if db == nil {
-		log.Println(tag_DBUtil, "insert, db is nil")
+		logger.Println(tag_DBUtil, "insert, db is nil")
 		return false
 	}
-	log.Println(tag_DBUtil, property, values)
+	logger.Println(tag_DBUtil, property, values)
 	if len(property) < 1 || len(property) != len(values) {
-		log.Println(tag_DBUtil, "insert, property length is not equal values")
+		logger.Println(tag_DBUtil, "insert, property length is not equal values")
 		return false
 	}
 	var mysql string = "insert into " + tableName + "("
@@ -77,15 +77,15 @@ func Insert(tableName string, property []string, values []interface{}) bool {
 			mysql += "?)"
 		}
 	}
-	log.Println(tag_DBUtil, mysql)
+	logger.Println(tag_DBUtil, mysql)
 	stmt, err := db.Prepare(mysql)
 	if err != nil {
-		log.Println(tag_DBUtil, err)
+		logger.Println(tag_DBUtil, err)
 		return false
 	}
 	_, err = stmt.Exec(values...)
 	if err != nil {
-		log.Println(tag_DBUtil, err)
+		logger.Println(tag_DBUtil, err)
 		return false
 	}
 	return true
@@ -96,12 +96,12 @@ func Insert(tableName string, property []string, values []interface{}) bool {
 **/
 func Update(tableName string, property []string, values []interface{}, whereProperty string, whereOpt string, whereValue interface{}) bool {
 	if db == nil {
-		log.Println(tag_DBUtil, "Update, db is nil")
+		logger.Println(tag_DBUtil, "Update, db is nil")
 		return false
 	}
-	log.Println(tag_DBUtil, property, values, whereProperty, whereValue)
+	logger.Println(tag_DBUtil, property, values, whereProperty, whereValue)
 	if len(property) < 1 || len(property) != len(values) {
-		log.Println(tag_DBUtil, "Update, property length is not equal values")
+		logger.Println(tag_DBUtil, "Update, property length is not equal values")
 		return false
 	}
 	var mysql string = "update " + tableName + " set"
@@ -116,10 +116,10 @@ func Update(tableName string, property []string, values []interface{}, whereProp
 	if whereProperty != "" && whereOpt != "" {
 		mysql += " where " + whereProperty + " " + whereOpt + " ?"
 	}
-	log.Println(tag_DBUtil, mysql)
+	logger.Println(tag_DBUtil, mysql)
 	stmt, err := db.Prepare(mysql)
 	if err != nil {
-		log.Println(tag_DBUtil, err)
+		logger.Println(tag_DBUtil, err)
 		return false
 	}
 	if len(whereProperty) < 1 {
@@ -129,7 +129,7 @@ func Update(tableName string, property []string, values []interface{}, whereProp
 		_, err = stmt.Exec(newValue...)
 	}
 	if err != nil {
-		log.Println(tag_DBUtil, err)
+		logger.Println(tag_DBUtil, err)
 		return false
 	}
 	return true
@@ -141,11 +141,11 @@ func Update(tableName string, property []string, values []interface{}, whereProp
 **/
 func Delete(tableName string, whereState string) bool {
 	if tableName == "" {
-		log.Println(tag_DBUtil, "Delete tableName is nil")
+		logger.Println(tag_DBUtil, "Delete tableName is nil")
 		return false
 	}
 	if db == nil {
-		log.Println(tag_DBUtil, "Delete, db is nil")
+		logger.Println(tag_DBUtil, "Delete, db is nil")
 		return false
 	}
 	var mysql string = "delete from " + tableName
@@ -154,12 +154,12 @@ func Delete(tableName string, whereState string) bool {
 	}
 	stmt, err := db.Prepare(mysql)
 	if err != nil {
-		log.Println(tag_DBUtil, err)
+		logger.Println(tag_DBUtil, err)
 		return false
 	}
 	_, err = stmt.Exec()
 	if err != nil {
-		log.Println(tag_DBUtil, err)
+		logger.Println(tag_DBUtil, err)
 		return false
 	}
 	return true
@@ -167,11 +167,11 @@ func Delete(tableName string, whereState string) bool {
 
 func Query(tableName string, propertys []string, whereState string, orderByState string, groupByState string) (*sql.Rows, bool) {
 	if tableName == "" {
-		log.Println(tag_DBUtil, "Query tableName is nil")
+		logger.Println(tag_DBUtil, "Query tableName is nil")
 		return nil, false
 	}
 	if db == nil {
-		log.Println(tag_DBUtil, "Query, db is nil")
+		logger.Println(tag_DBUtil, "Query, db is nil")
 		return nil, false
 	}
 	var mysql string
@@ -199,10 +199,10 @@ func Query(tableName string, propertys []string, whereState string, orderByState
 	if groupByState != "" {
 		mysql += " group by " + groupByState
 	}
-	log.Println(tag_DBUtil, mysql)
+	logger.Println(tag_DBUtil, mysql)
 	rows, err := db.Query(mysql)
 	if err != nil {
-		log.Println(tag_DBUtil, err)
+		logger.Println(tag_DBUtil, err)
 		return nil, false
 	}
 	return rows, true
@@ -213,16 +213,16 @@ func Query(tableName string, propertys []string, whereState string, orderByState
 **/
 func ExcuteSql(sql string, value []interface{}) (driver.Result, bool) {
 	if sql == "" {
-		log.Println(tag_DBUtil, "ExcuteSql sql is nil")
+		logger.Println(tag_DBUtil, "ExcuteSql sql is nil")
 		return nil, false
 	}
 	if db == nil {
-		log.Println(tag_DBUtil, "ExcuteSql, db is nil")
+		logger.Println(tag_DBUtil, "ExcuteSql, db is nil")
 		return nil, false
 	}
 	stmt, err := db.Prepare(sql)
 	if err != nil {
-		log.Println(tag_DBUtil, err)
+		logger.Println(tag_DBUtil, err)
 		return nil, false
 	}
 	var result driver.Result
@@ -232,7 +232,7 @@ func ExcuteSql(sql string, value []interface{}) (driver.Result, bool) {
 		result, err = stmt.Exec(value...)
 	}
 	if err != nil {
-		log.Println(tag_DBUtil, err)
+		logger.Println(tag_DBUtil, err)
 		return nil, false
 	}
 	return result, true

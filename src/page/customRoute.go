@@ -1,7 +1,7 @@
 package page
 
 import (
-	"fmt"
+	"utils/logger"
 	"io"
 	"net/http"
 	"os"
@@ -19,21 +19,21 @@ var upgrader = websocket.Upgrader{
 }
 
 func ServeWebSocket(w http.ResponseWriter, r *http.Request) {
-	fmt.Println(tag_customRoute, "ServeWebSocket")
+	logger.Println(tag_customRoute, "ServeWebSocket")
 	conn, err := upgrader.Upgrade(w, r, nil)
 	defer conn.Close()
 	if err != nil {
-		fmt.Println(tag_customRoute, err)
+		logger.Println(tag_customRoute, err)
 		return
 	}
 	doWebSocket(w, r, conn)
 }
 func ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()                        //解析参数，默认是不会解析的
-	fmt.Println(tag_customRoute, r.Form) //这些信息是输出到服务器端的打印信息
-	fmt.Println(tag_customRoute, "path:"+r.URL.Path)
-	fmt.Println(tag_customRoute, "Scheme:"+r.URL.Scheme)
-	fmt.Println(tag_customRoute, "Proto:"+r.Proto)
+	logger.Println(tag_customRoute, r.Form) //这些信息是输出到服务器端的打印信息
+	logger.Println(tag_customRoute, "path:"+r.URL.Path)
+	logger.Println(tag_customRoute, "Scheme:"+r.URL.Scheme)
+	logger.Println(tag_customRoute, "Proto:"+r.Proto)
 	doHttp(w, r)
 }
 
@@ -45,13 +45,13 @@ func doWebSocket(w http.ResponseWriter, r *http.Request, conn *websocket.Conn) {
 		var inputData []byte
 		msgType, inputData, err := conn.ReadMessage()
 		if err != nil {
-			fmt.Println(tag_customRoute, err)
+			logger.Println(tag_customRoute, err)
 			return
 		}
-		fmt.Println(tag_customRoute, "receive data:"+string(inputData))
+		logger.Println(tag_customRoute, "receive data:"+string(inputData))
 		err = conn.WriteMessage(msgType, inputData)
 		if err != nil {
-			fmt.Println(tag_customRoute, err)
+			logger.Println(tag_customRoute, err)
 			return
 		}
 	}
@@ -78,7 +78,7 @@ func doHttp(w http.ResponseWriter, r *http.Request) {
 		f, err := os.Open(file)
 		defer f.Close()
 		if err != nil && os.IsNotExist(err) {
-			fmt.Println(tag_customRoute, err)
+			logger.Println(tag_customRoute, err)
 		}
 		http.ServeFile(w, r, file)
 		return
@@ -91,7 +91,7 @@ func doHttp(w http.ResponseWriter, r *http.Request) {
 处理http /OnAjax 请求
 */
 func OnAjax(w http.ResponseWriter, r *http.Request) {
-	fmt.Println(tag_customRoute, "OnAjax")
+	logger.Println(tag_customRoute, "OnAjax")
 	r.ParseForm()
 	//set cookie
 	expiration := time.Now()

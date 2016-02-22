@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	"utils/logger"
 	"log"
 	"net/http"
 	"page"
@@ -28,17 +28,17 @@ func (p *customWSMux) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 func main() {
 	initApplication()
 	releaseApplication()
-	fmt.Println(tag_hs, "main over")
+	logger.Println(tag_hs, "main over")
 }
 
 /*
 启动http服务器，http://localhost:9090
 */
 func startHttp() {
-	fmt.Println("main", "start http，listen on 9090 port")
+	logger.Println("main", "start http，listen on 9090 port")
 	err := http.ListenAndServe(":9090", &customMux{})
 	if err != nil {
-		fmt.Println("main", err)
+		log.Println("main", err)
 		log.Fatal("server error")
 	}
 }
@@ -47,10 +47,10 @@ func startHttp() {
 启动websocket服务器ws://localhost:8888
 */
 func startWs() {
-	fmt.Println("main", "start websocket port 8888")
+	logger.Println("main", "start websocket port 8888")
 	err := http.ListenAndServe(":8888", &customWSMux{})
 	if err != nil {
-		fmt.Println("main", err)
+		logger.Println("main", err)
 	}
 }
 func initApplication() {

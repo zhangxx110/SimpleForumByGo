@@ -2,7 +2,7 @@ package page
 
 import (
 	"crypto/md5"
-	"fmt"
+	"utils/logger"
 	"html/template"
 	"io"
 	"net/http"
@@ -10,21 +10,22 @@ import (
 	"strconv"
 	"time"
 	"utils"
+	"fmt"
 )
 
 var tag_upload string = "upload"
 
 // 处理/upload 逻辑
 func Upload(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("method:", r.Method) //获取请求的方法
+	logger.Println("method:", r.Method) //获取请求的方法
 	mycookie, err := r.Cookie("login")
 	if err != nil || mycookie == nil {
 		var prompt string = "not login or login timeout"
-		fmt.Println(tag_upload, prompt)
+		logger.Println(tag_upload, prompt)
 		w.Write([]byte(prompt))
 		return
 	}
-	fmt.Println(tag_upload, "mycookie Name:"+mycookie.Name+" value:"+mycookie.Value+" Expires:"+mycookie.Expires.String())
+	logger.Println(tag_upload, "mycookie Name:"+mycookie.Name+" value:"+mycookie.Value+" Expires:"+mycookie.Expires.String())
 	if r.Method == "GET" {
 		crutime := time.Now().Unix()
 		h := md5.New()
@@ -33,7 +34,7 @@ func Upload(w http.ResponseWriter, r *http.Request) {
 		Separator := utils.GetSeparator()
 		t, err := template.ParseFiles("template" + Separator + "testupload.html")
 		if err != nil {
-			fmt.Println(tag_upload, err)
+			logger.Println(tag_upload, err)
 			return
 		}
 		t.Execute(w, token)
@@ -41,7 +42,7 @@ func Upload(w http.ResponseWriter, r *http.Request) {
 		r.ParseMultipartForm(32 << 20)
 		file, handler, err := r.FormFile("uploadfile")
 		if err != nil {
-			fmt.Println(err)
+			logger.Println(err)
 			return
 		}
 		defer file.Close()
@@ -50,7 +51,7 @@ func Upload(w http.ResponseWriter, r *http.Request) {
 		var subpath string = "data"
 		f, err = utils.CreatFile(subpath, handler.Filename)
 		if err != nil {
-			fmt.Println(tag_upload, err)
+			logger.Println(tag_upload, err)
 			return
 		}
 		defer f.Close()

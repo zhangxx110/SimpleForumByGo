@@ -2,7 +2,6 @@ package utils
 
 import (
 	"errors"
-	"fmt"
 	"os"
 )
 
@@ -11,20 +10,20 @@ var tag_file = "file"
 func mkDir(path string) bool {
 	var Separator string
 	Separator = GetSeparator()
-	fmt.Println(Separator)
+	//logger.Println(Separator)
 	dir, _ := os.Getwd()                                //当前的目录
 	err := os.MkdirAll(dir+Separator+path, os.ModePerm) //在当前目录下生成md目录
 	if err != nil {
-		fmt.Println(err)
+		//logger.Println(err)
 		if os.IsExist(err) {
-			fmt.Println(tag_file, dir+Separator+path+" has exist")
+			//logger.Println(tag_file, dir+Separator+path+" has exist")
 			return true
 		} else {
-			fmt.Println(tag_file, dir+Separator+path+" not exist")
+			//logger.Println(tag_file, dir+Separator+path+" not exist")
 			return false
 		}
 	} else {
-		fmt.Println("creat" + dir + Separator + path + " success")
+		//logger.Println("creat" + dir + Separator + path + " success")
 		return true
 	}
 
@@ -38,7 +37,7 @@ func CreatFile(path string, fileName string) (*os.File, error) {
 		Separator := GetSeparator()
 		f, err := os.OpenFile(path+Separator+fileName, os.O_RDWR|os.O_CREATE, 0777)
 		if err != nil {
-			fmt.Println(tag_file, err)
+		//	logger.Println(tag_file, err)
 			return nil, errors.New("creat file error")
 		}
 		return f, nil
